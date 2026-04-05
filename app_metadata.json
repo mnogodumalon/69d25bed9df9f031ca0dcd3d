@@ -1,0 +1,193 @@
+{
+  "appgroup_id": "69d25bed9df9f031ca0dcd3d",
+  "appgroup_name": "Hua Hin Bayreuth",
+  "apps": {
+    "speisekarte": {
+      "app_id": "69d25bddc5789f7ef4bc8229",
+      "name": "Speisekarte",
+      "controls": {
+        "bezeichnung": {
+          "identifier": "bezeichnung",
+          "label": "Bezeichnung",
+          "type": "string",
+          "subtype": "text",
+          "fulltype": "string/text",
+          "description": "A string value not longer than 4000 characters (or `null`/`None`).",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": true,
+          "in_text": true,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true
+        },
+        "beschreibung": {
+          "identifier": "beschreibung",
+          "label": "Beschreibung",
+          "type": "string",
+          "subtype": "text",
+          "fulltype": "string/text",
+          "description": "A string value not longer than 4000 characters (or `null`/`None`).",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": true,
+          "in_text": true,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true
+        },
+        "preis": {
+          "identifier": "preis",
+          "label": "Preis (EUR)",
+          "type": "number",
+          "subtype": null,
+          "fulltype": "number",
+          "description": "A decimal number value (or `null`/`None`).",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "precision": null
+        },
+        "besondere_angaben": {
+          "identifier": "besondere_angaben",
+          "label": "Besondere Angaben",
+          "type": "string",
+          "subtype": "text",
+          "fulltype": "string/text",
+          "description": "A string value not longer than 4000 characters (or `null`/`None`).",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true
+        }
+      }
+    },
+    "bestellungen": {
+      "app_id": "69d25be01d8ecf5e2ed286c8",
+      "name": "Bestellungen",
+      "controls": {
+        "name_bestellender": {
+          "identifier": "name_bestellender",
+          "label": "Name Bestellender",
+          "type": "string",
+          "subtype": "text",
+          "fulltype": "string/text",
+          "description": "A string value not longer than 4000 characters (or `null`/`None`).",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": true,
+          "in_text": true,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true
+        },
+        "gericht": {
+          "identifier": "gericht",
+          "label": "Gericht",
+          "type": "applookup",
+          "subtype": "select",
+          "fulltype": "applookup/select",
+          "description": "A reference to a LivingApp record from the target lookup app 'Speisekarte' with the id `69d25bddc5789f7ef4bc8229` (or `null`/`None`).\n\nThe field value will be a valid record URL in the form `https://my.living-apps.de/rest/apps/69d25bddc5789f7ef4bc8229/<record-id>` (or `null`/`None`).\n\nDisplayed as single-select field in HTML pages.",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": true,
+          "in_text": true,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "lookup_app": "https://my.living-apps.de/rest/apps/69d25bddc5789f7ef4bc8229"
+        },
+        "vorspeise": {
+          "identifier": "vorspeise",
+          "label": "Vorspeise",
+          "type": "lookup",
+          "subtype": "select",
+          "fulltype": "lookup/select",
+          "description": "One selected option of multiple available options (or `null`/`None`).\n\nThe available options are defined in the `lookup_data` attribute of this control.\n\nThe field value will be the key in this `lookup_data` attribute (or `null`/`None`).\n\nDisplayed as single-select field in HTML pages.",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "lookup_data": {
+            "fruehlingsrollen": "Frühlingsrollen",
+            "suppe": "Suppe",
+            "suesssauer": "Süßsauer",
+            "suppe_kokosmilch": "Suppe Kokosmilch"
+          }
+        },
+        "besondere_hinweise": {
+          "identifier": "besondere_hinweise",
+          "label": "Besondere Hinweise",
+          "type": "string",
+          "subtype": "text",
+          "fulltype": "string/text",
+          "description": "A string value not longer than 4000 characters (or `null`/`None`).",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true
+        },
+        "bezahlung": {
+          "identifier": "bezahlung",
+          "label": "Bezahlung",
+          "type": "lookup",
+          "subtype": "select",
+          "fulltype": "lookup/select",
+          "description": "One selected option of multiple available options (or `null`/`None`).\n\nThe available options are defined in the `lookup_data` attribute of this control.\n\nThe field value will be the key in this `lookup_data` attribute (or `null`/`None`).\n\nDisplayed as single-select field in HTML pages.",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "lookup_data": {
+            "keine_angabe": "Keine Angabe",
+            "paypal": "PayPal",
+            "bar": "Bar",
+            "kostenlos": "Kostenlos"
+          }
+        },
+        "bezahlt": {
+          "identifier": "bezahlt",
+          "label": "Bezahlt",
+          "type": "lookup",
+          "subtype": "select",
+          "fulltype": "lookup/select",
+          "description": "One selected option of multiple available options (or `null`/`None`).\n\nThe available options are defined in the `lookup_data` attribute of this control.\n\nThe field value will be the key in this `lookup_data` attribute (or `null`/`None`).\n\nDisplayed as single-select field in HTML pages.",
+          "required": null,
+          "in_list": false,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": false,
+          "in_fulltext_search": null,
+          "in_expert_search": true,
+          "lookup_data": {
+            "keine_angabe": "Keine Angabe",
+            "ja": "Ja",
+            "nein": "Nein"
+          }
+        }
+      }
+    }
+  },
+  "metadata": {
+    "apps_list": [
+      "Speisekarte",
+      "Bestellungen"
+    ]
+  }
+}

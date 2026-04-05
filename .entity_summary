@@ -1,0 +1,3 @@
+- Speisekarte (speisekarte): bezeichnung[string/text], beschreibung[string/text], preis[number], besondere_angaben[string/text]
+- Bestellungen (bestellungen): name_bestellender[string/text], gericht[applookup/select], vorspeise[lookup/select], besondere_hinweise[string/text], bezahlung[lookup/select], bezahlt[lookup/select]
+  → gericht links to app_id 69d25bddc5789f7ef4bc8229
