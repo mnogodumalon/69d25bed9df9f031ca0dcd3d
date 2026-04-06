@@ -12,7 +12,7 @@ import { Badge } from '@/components/ui/badge';
 import { AI_PHOTO_SCAN } from '@/config/ai-features';
 import {
   IconAlertCircle, IconTool, IconRefresh, IconCheck,
-  IconPlus, IconPencil, IconTrash, IconShoppingCart,
+  IconPlus, IconShoppingCart,
   IconGrillFork, IconUsers, IconCoin, IconNotes
 } from '@tabler/icons-react';
 import { SpeisekarteDialog } from '@/components/dialogs/SpeisekarteDialog';
@@ -192,24 +192,6 @@ export default function DashboardOverview() {
                     >
                       <IconShoppingCart size={14} />
                     </Button>
-                    <Button
-                      size="sm"
-                      variant="ghost"
-                      className="h-7 w-7 p-0"
-                      title="Bearbeiten"
-                      onClick={() => { setEditGericht(gericht); setSpeisekarteDialogOpen(true); }}
-                    >
-                      <IconPencil size={14} />
-                    </Button>
-                    <Button
-                      size="sm"
-                      variant="ghost"
-                      className="h-7 w-7 p-0 text-destructive hover:text-destructive"
-                      title="Löschen"
-                      onClick={() => setDeleteGericht(gericht)}
-                    >
-                      <IconTrash size={14} />
-                    </Button>
                   </div>
                 </div>
               ))}
@@ -244,7 +226,7 @@ export default function DashboardOverview() {
             </div>
           ) : (
             <div className="divide-y divide-border max-h-[500px] overflow-y-auto">
-              {enrichedBestellungen.map(bestellung => (
+              {[...enrichedBestellungen].sort((a, b) => (a.fields.name_bestellender ?? '').localeCompare(b.fields.name_bestellender ?? '', 'de')).map(bestellung => (
                 <div key={bestellung.record_id} className="flex items-start gap-3 px-4 py-3 hover:bg-accent/40 transition-colors">
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
@@ -276,26 +258,6 @@ export default function DashboardOverview() {
                         <p className="text-xs text-amber-600 line-clamp-1">{bestellung.fields.besondere_hinweise}</p>
                       </div>
                     )}
-                  </div>
-                  <div className="flex items-center gap-1 shrink-0">
-                    <Button
-                      size="sm"
-                      variant="ghost"
-                      className="h-7 w-7 p-0"
-                      title="Bearbeiten"
-                      onClick={() => { setEditBestellung(bestellung); setSelectedGerichtId(null); setBestellungDialogOpen(true); }}
-                    >
-                      <IconPencil size={14} />
-                    </Button>
-                    <Button
-                      size="sm"
-                      variant="ghost"
-                      className="h-7 w-7 p-0 text-destructive hover:text-destructive"
-                      title="Löschen"
-                      onClick={() => setDeleteBestellung(bestellung)}
-                    >
-                      <IconTrash size={14} />
-                    </Button>
                   </div>
                 </div>
               ))}
